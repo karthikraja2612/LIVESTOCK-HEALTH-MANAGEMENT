@@ -1,0 +1,33 @@
+/* notification.css */
+.notification {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .notification-link {
+    display: flex;
+    align-items: center;
+    color: #4a4a4a;
+    text-decoration: none;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #f00;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+  }
+  
