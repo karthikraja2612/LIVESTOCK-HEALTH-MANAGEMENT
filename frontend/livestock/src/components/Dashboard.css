@@ -1,0 +1,53 @@
+/* Dashboard.css */
+
+/* Layout for the dashboard: sidebar + content */
+.dashboard-layout {
+    display:flex;
+    height: 100vh; /* Ensure it takes the full height of the screen */
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    background-color: #fff;
+    border-right: 2px solid #ddd;
+    padding: 10px;
+    position: fixed;
+    height: 100%;
+  }
+  
+  /* Main content area */
+  .dashboard-content {
+    padding: 20px;
+    width: 10%;
+    overflow-y: auto;
+  }
+  
+  .dashboard-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Animal cards container (grid layout for cards) */
+  .animal-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Grid layout for cards */
+    gap: 70px;
+    justify-items: center;
+  }
+  
+  /* Media queries for responsive adjustments */
+  @media (min-width: 600px) {
+    .animal-cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Larger cards */
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .animal-cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Even larger for desktop */
+    }
+  }
+  
