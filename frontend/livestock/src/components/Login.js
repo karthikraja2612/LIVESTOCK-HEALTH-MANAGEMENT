@@ -17,8 +17,8 @@ const Login = ({ onLogin }) => {
       const response = await axios.post("http://127.0.0.1:8000/login", { email, password });
       console.log(response.data);
       alert("Login successful!");
-      onLogin();  // Call onLogin to set isLoggedIn to true
-      navigate("/dashboard");  // Navigate to dashboard
+      onLogin();
+      navigate("/dashboard");
     } catch (error) {
       if (error.response) {
         if (error.response.status === 422) {
@@ -38,30 +38,54 @@ const Login = ({ onLogin }) => {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
-        <h1>Login</h1>
-        <div className="form-group">
-          <input type="email" className="form-control" placeholder="Email" name="email" required />
-        </div>
-        <div className="form-group">
-          <input
-            type={showPassword ? "text" : "password"}
-            className="form-control"
-            placeholder="Password"
-            name="password"
-            required
-          />
-          <span
-            className="toggle-password"
-            onClick={() => setShowPassword(!showPassword)}
-          >
-            {showPassword ? "👁️" : "👁️‍🗨️"}
-          </span>
-        </div>
-        <button type="submit" className="btn-primary">Login</button>
-        <button type="button" className="btn-secondary" onClick={() => navigate("/register")}>Register</button>
+      <div className="login-left">
+        <h1>WELCOME BACK</h1>
+        <p>Welcome back! Please enter your details.</p>
+        <form className="login-form" onSubmit={handleLogin}>
+          <div className="form-group">
+            <div className="text">
+              Email
+            </div>
+            <input
+              type="email"
+              className="form-control"
+              placeholder="Enter your email"
+              name="email"
+              required
+            />
+          </div>
+          <div className="text1">
+              Password
+          </div>
+          <div className="form-group">
+            <input
+              type={showPassword ? "text" : "password"}
+              className="form-control"
+              placeholder="Enter your password"
+              name="password"
+              required
+            />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? "👁️" : "👁️‍🗨️"}
+            </span>
+          </div>
+          <button type="submit" className="btn-primary">Sign in</button>
+        </form>
+        <p className="register-link">
+          Don't have an account? <span onClick={() => navigate("/register")}>Sign up for free!</span>
+        </p>
         {error && <div className="alert">{error}</div>}
-      </form>
+      </div>
+      <div className="login-right">
+        <img
+          src="https://connected-vet.com/wp-content/uploads/2023/10/iclassifier.png" // Replace with your actual image path
+          alt="Livestock management"
+          className="login-image"
+        />
+      </div>
     </div>
   );
 };

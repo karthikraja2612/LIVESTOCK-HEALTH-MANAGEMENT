@@ -1,75 +1,149 @@
-/* Center the form */
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #cfdfe1;
+}
+
+/* Full Screen Login Container */
 .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  /* Full viewport height */
+  width: 80%;    /* Full viewport width */
+  background: linear-gradient(135deg, #6c7b8b, #2a2a72);
+  padding: 0;
+  margin: 0;
+}
+
+/* Left Side (Form) */
+.login-left {
+  width: 100%;   /* Take up full width */
+  max-width: 425px; /* Limit maximum width for better appearance */
+  height: 100%;  /* Full height */
+  padding: 40px;
+  background-color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.login-left h1 {
+  font-size: 30px;
+  color: #2a2a72;
+  margin-bottom: 15px;
+}
+
+.login-left p {
+  color: #6c7b8b;
+  margin-bottom: 60px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  
+}
+
+.form-control {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.form-control:focus {
+  border-color: #2a2a72;
+  outline: none;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 20px;
+  top: 45%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #4068a0;
+  margin-top: 40px;
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 18px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4d4d80;
+}
+
+.register-link {
+  margin-top: 20px;
+  color: #dfe6ec;
+}
+.text{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left:-280px ;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.text1{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  margin-left:-250px ;
+  margin-top: 10px;
+}
+
+.register-link span {
+  color: #2a2a72;
+  cursor: pointer;
+}
+
+.alert {
+  margin-top: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Right Side (Image) */
+.login-right {
+  display: none;  /* Hides the image on small screens */
+}
+
+@media screen and (min-width: 768px) {
+  .login-right {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
-  }
-  
-  /* Style the form */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-  }
-  
-  .login-form h1 {
-    margin-bottom: 1rem;
-  }
-  
-  /* Input fields */
-  .login-form .form-group {
-    width: 50%;
-    margin-bottom: 1rem;
-    position: relative;
-  }
-  
-  .login-form .form-control {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
   }
-  
-  /* Show/hide password icon */
-  .login-form .toggle-password {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    cursor: pointer;
+
+  .login-image {
+    max-width: 110%;
+    height: 700px;
   }
-  
-  /* Buttons */
-  .login-form button {
-    width: 50%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-  }
-  
-  .login-form button.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .login-form button.btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-  }
-  
-  /* Error message */
-  .login-form .alert {
-    margin-top: 1rem;
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    padding: 0.75rem 1.25rem;
-    border-radius: 4px;
-  }
-  
+}
