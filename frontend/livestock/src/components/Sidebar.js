@@ -11,7 +11,7 @@ function Sidebar() {
         <ul className="sidebar-nav">
           <li>
             <NavLink to="/dashboard" className="sidebar-link" activeClassName="active">
-              Dashboard
+            Dashboard
             </NavLink>
           </li>
           <li>
@@ -31,7 +31,7 @@ function Sidebar() {
           </li>
           <li>
             <NavLink to="/settings" className="sidebar-link" activeClassName="active">
-              Settings
+             Settings
             </NavLink>
           </li>
         </ul>

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import Sidebar from "./components/Sidebar";
 import Header from "./components/header";
 import Dashboard from "./components/Dashboard";
-import AnimalPage from "./components/AnimalPage";
+import AnimalPage from "./components/animals/AnimalPage";
 import HealthRecordsPage from "./components/HealthRecordsPage";
 import ReportsPage from "./components/ReportsPage";
 import SettingsPage from "./components/SettingsPage";

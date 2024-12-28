@@ -1,70 +1,72 @@
 .app-container {
   display: flex;
-  height: 100vh;
-}
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding-top: 4rem; /* Adjusted for header height */
-  padding-left: 1rem; /* Adjusted for sidebar width */
-  padding-right: 1rem;
-  overflow-y: auto;
+  min-height: 100vh; /* Ensures the page fills the viewport */
 }
 
 .sidebar {
-  width: 16rem; /* Sidebar width */
-  background-color: #fff;
-  border-right: 1px solid #e5e7eb;
-  height: 100vh;
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #fdfdfd;
+  border-right: 1px solid #ebe9e9;
   position: fixed;
   top: 0;
   left: 0;
+  height: 100vh;
   z-index: 10;
+  overflow-y: auto; /* Allows scrolling if content overflows */
 }
 
 .header {
   position: fixed;
   top: 0;
-  left: 16rem; /* Ensures it does not overlap with sidebar */
+  left: 250px; /* Matches sidebar width */
   right: 0;
+  height: 4rem;
   background-color: #fff;
+  border-bottom: 1px solid #ebe9e9;
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.main-content {
+  margin-left: 250px; /* Matches sidebar width */
+  margin-top: 2rem; /* Matches header height */
   padding: 1rem;
-  border-bottom: 1px solid #e5e7eb;
+  flex: 1;
+  overflow-y: auto; /* Allows scrolling for the main content */
+  background-color: #f9fafb;
 }
 
-.dashboard {
-  margin-top: 4rem; /* Prevents overlap with header */
-  padding: 1rem;
-}
-
-.animal-cards {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 640px) {
-  .animal-cards {
-    grid-template-columns: repeat(2, 1fr);
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Reduce sidebar width on smaller screens */
   }
-}
 
-@media (min-width: 1024px) {
-  .animal-cards {
-    grid-template-columns: repeat(3, 1fr);
+  .header {
+    left: 200px; /* Matches reduced sidebar width */
   }
-  .app-container {
 
-    display: flex;
-    min-height: 100vh; 
-  }
-  
   .main-content {
-    margin-left: 250px; /* Sidebar width */
-    padding: 20px;
-    flex: 1;
+    margin-left: 200px; /* Matches reduced sidebar width */
+  }
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    position: static; /* Stack sidebar vertically */
+    width: 100%; /* Full-width for small screens */
+    height: auto;
+  }
+
+  .header {
+    left: 0; /* Reset header alignment */
+  }
+
+  .main-content {
+    margin-left: 0; /* Reset margin for small screens */
+    margin-top: 4rem; /* Retain space for header */
   }
 }
