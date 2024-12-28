@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Header from "./components/header";
+import Header from "./components/Header/header";
 import Dashboard from "./components/Dashboard";
 import AnimalPage from "./components/animals/AnimalPage";
 import HealthRecordsPage from "./components/HealthRecordsPage";
@@ -10,6 +10,9 @@ import SettingsPage from "./components/SettingsPage";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import AIAssistant from "./components/AIAssistant";
+import Profile from "./components/Header/Profile";
+import Notifications from "./components/Header/Notification";
+import SearchResults from "./components/Header/SearchResults";
 import "./App.css";
 
 function App() {
@@ -62,6 +65,19 @@ function App() {
               path="/ai-assistant"
               element={isLoggedIn ? <AIAssistant /> : <Navigate to="/login" />}
             />
+            <Route
+              path="/profile"
+              element={isLoggedIn ? <Profile /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/notifications"
+              element={isLoggedIn ? <Notifications /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/search"
+              element={isLoggedIn ? <SearchResults /> : <Navigate to="/login" />}
+            />
+            
             
           </Routes>
         </div>
