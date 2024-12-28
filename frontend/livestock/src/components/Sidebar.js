@@ -34,6 +34,12 @@ function Sidebar() {
              Settings
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/ai-assistant" className="sidebar-link" activeClassName="active">
+               AI Assistant
+            </NavLink>
+          </li>
+
         </ul>
       </nav>
     </div>

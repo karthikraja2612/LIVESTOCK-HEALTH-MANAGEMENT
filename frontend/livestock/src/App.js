@@ -9,6 +9,7 @@ import ReportsPage from "./components/ReportsPage";
 import SettingsPage from "./components/SettingsPage";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import AIAssistant from "./components/AIAssistant";
 import "./App.css";
 
 function App() {
@@ -57,6 +58,11 @@ function App() {
               path="/settings"
               element={isLoggedIn ? <SettingsPage /> : <Navigate to="/login" />}
             />
+            <Route
+              path="/ai-assistant"
+              element={isLoggedIn ? <AIAssistant /> : <Navigate to="/login" />}
+            />
+            
           </Routes>
         </div>
       </div>

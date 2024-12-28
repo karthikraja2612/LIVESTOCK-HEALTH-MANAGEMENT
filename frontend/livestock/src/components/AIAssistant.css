@@ -1,0 +1,46 @@
+.ai-assistant {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ai-assistant h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .ai-assistant-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .ai-assistant-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .ai-assistant-input button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ai-assistant-input button:hover {
+    background-color: #0056b3;
+  }
+  
+  .ai-assistant-response {
+    padding: 10px;
+    background-color: #e9f7e9;
+    border: 1px solid #d4edda;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
